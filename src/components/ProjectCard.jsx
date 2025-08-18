@@ -1,10 +1,43 @@
-export default function ProjectCard({ title, description, tech, link }) {
+import { motion } from "framer-motion";
+
+export default function ProjectCard({ title, description, tech, link, image }) {
+  <h2 className="text-3xl font-bold mb-10 text-gray-900 dark:text-white">Compétences</h2>
   return (
-    <div className="border rounded-lg p-4 shadow hover:shadow-lg transition duration-300 bg-white dark:bg-gray-800">
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 mb-2">{description}</p>
-      <p className="text-sm text-gray-500 mb-4">{tech.join(", ")}</p>
-      <a href={link} className="text-blue-500 hover:underline">Voir sur GitHub</a>
-    </div>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="border rounded-xl shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-gray-800 p-6"
+    >
+      {image && (
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-64 object-cover rounded-xl mb-4"
+        />
+      )}
+
+      <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
+      <p className="text-gray-700 dark:text-gray-300 mb-4">{description}</p>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tech.map((t, index) => (
+          <span
+            key={index}
+            className="px-2 py-1 rounded-full text-sm font-medium text-white bg-blue-500 dark:bg-blue-600"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition"
+      >
+        Voir sur GitHub
+      </a>
+    </motion.div>
   );
 }

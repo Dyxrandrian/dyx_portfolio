@@ -36,7 +36,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          Dylan R.
+          Dyx_Randrian
         </motion.div>
 
         {/* Desktop links */}
