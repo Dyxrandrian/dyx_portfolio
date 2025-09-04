@@ -1,43 +1,28 @@
 import { motion } from "framer-motion";
-import { 
-  FaReact, FaJsSquare, FaJava, FaHtml5, FaCss3Alt, FaGithub, FaCog 
+import {
+  FaReact, FaJsSquare, FaJava, FaHtml5, FaCss3Alt, FaGithub, FaCog
 } from "react-icons/fa";
 import { SiPostgresql } from "react-icons/si";
 import { MdApi } from "react-icons/md";
-import { BiData } from "react-icons/bi";
-import { AiOutlineCloud, AiOutlineBarChart } from "react-icons/ai";
+import { AiOutlineBarChart } from "react-icons/ai";
 import { RiFlowChart } from "react-icons/ri";
-import { VscJson } from "react-icons/vsc";
+import PythonIcon from "../assets/python.png";
 
 const skillIcons = {
   React: <FaReact className="text-blue-500 w-8 h-8" />,
+  "React Admin": <FaCog className="text-pink-500 w-8 h-8" />,
+  HTML: <FaHtml5 className="text-orange-500 w-8 h-8" />,
+  CSS: <FaCss3Alt className="text-blue-600 w-8 h-8" />,
   JavaScript: <FaJsSquare className="text-yellow-400 w-8 h-8" />,
   Java: <FaJava className="text-red-600 w-8 h-8" />,
   PostgreSQL: <SiPostgresql className="text-indigo-500 w-8 h-8" />,
-  HTML: <FaHtml5 className="text-orange-500 w-8 h-8" />,
-  CSS: <FaCss3Alt className="text-blue-600 w-8 h-8" />,
-  Data: <BiData className="text-green-500 w-8 h-8" />,
   API: <MdApi className="text-purple-500 w-8 h-8" />,
-  "React Admin": <FaCog className="text-pink-500 w-8 h-8" />,
   GitHub: <FaGithub className="text-gray-700 dark:text-white w-8 h-8" />,
+  Python: <img src={PythonIcon} alt="Python" className="w-8 h-8" />,
   "Apache Airflow": <RiFlowChart className="text-teal-500 w-8 h-8" />,
   "Data Visualization": <AiOutlineBarChart className="text-yellow-500 w-8 h-8" />,
 };
-
-const skills = [
-  "React", 
-  "React Admin", 
-  "JavaScript", 
-  "HTML", 
-  "CSS",
-  "Java", 
-  "PostgreSQL", 
-  "Data", 
-  "Data Visualization",
-  "Apache Airflow",
-  "API", 
-  "GitHub"
-];
+const skills = Object.keys(skillIcons);
 
 export default function Skills() {
   return (

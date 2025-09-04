@@ -7,41 +7,44 @@ import Education from "../components/Education";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
-
   const skillsList = [
     "React",
+    "React Admin",
     "JavaScript",
-    "Java",
-    "PostgreSQL",
     "HTML",
     "CSS",
-    "Data",
+    "Java",
+    "PostgreSQL",
+    "Data Visualization",
+    "Apache Airflow",
+    "Python",
     "API",
-    "React Admin",
-    "GitHub",
-    "Workflow",
-    "REST API",
-    "JSON",
-    "Weather API",
-    "Data Visualization"
+    "GitHub"
   ];
-  
   const projects = [
     {
       title: "Jirama Alert",
       description: "Gestion de coupure d'électricité",
-      tech: ["React", "Spring Boot"],
+      tech: ["React", "React Admin", "Spring Boot", "Java", "PostgreSQL"],
       link: "#",
       images: "/src/assets/jirama_1.png"
     },
     {
       title: "Brew Lounge website",
       description: "Site statique",
-      tech: ["HTML", "CSS"],
+      tech: ["HTML", "CSS", "JavaScript"],
       link: "#",
       images: "/src/assets/brew_1.png"
     },
+    {
+      title: "Weather Comparaison",
+      description: "Comparaison météo avec Python, Airflow et Metabase",
+      tech: ["Python", "Apache Airflow", "Metabase", "API"],
+      link: "#",
+      images: "/src/assets/dash_1.png"
+    },
   ];
+
 
   const sectionVariant = {
     hidden: { opacity: 0, y: 50 },

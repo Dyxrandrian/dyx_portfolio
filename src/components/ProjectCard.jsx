@@ -23,7 +23,7 @@ export default function ProjectCard({ title, description, tech, link, image }) {
         {tech.map((t, index) => (
           <span
             key={index}
-            className="px-2 py-1 rounded-full text-sm font-medium text-white bg-blue-500 dark:bg-blue-600"
+            className="px-2 py-1 rounded-md text-sm font-medium text-white bg-blue-500 dark:bg-blue-600"
           >
             {t}
           </span>
