@@ -5,7 +5,10 @@ import ProjectCard from "../components/ProjectCard";
 import Skills from "../components/Skills";
 import Footer from "../components/Footer";
 import Education from "../components/Education";
-import Particles from "../components/ParticleCanvas"; // ton composant particles
+import Particles from "../components/ParticleCanvas"; 
+import jirama1 from '../assets/jirama_1.png';
+import brew1 from '../assets/brew_1.png';
+import dash1 from '../assets/dash_1.png';
 
 export default function HomePage() {
   const skillsList = [
@@ -14,11 +17,11 @@ export default function HomePage() {
     "Python","API","GitHub"
   ];
 
-  const projects = [
-    { title: "Jirama Alert", description: "Gestion de coupure d'électricité", tech: ["React","React Admin","Spring Boot","Java","PostgreSQL"], link: "https://github.com/Dyxrandrian/Jirama_alert", images: "/src/assets/jirama_1.png" },
-    { title: "Brew Lounge website", description: "Site statique", tech: ["HTML","CSS","JavaScript"], link: "https://github.com/Dyxrandrian/brew-lounge-website", images: "/src/assets/brew_1.png" },
-    { title: "Comparaison Méteo", description: "Comparaison météo avec Python, Airflow et Metabase", tech: ["Python","Apache Airflow","Metabase","API"], link: "https://github.com/Dyxrandrian/Comparaison_climatique_STD23065", images: "/src/assets/dash_1.png" },
-  ];
+const projects = [
+  { title: "Jirama Alert", description: "Gestion de coupure d'électricité", tech: ["React","React Admin","Spring Boot","Java","PostgreSQL"], link: "...", images: jirama1 },
+  { title: "Brew Lounge website", description: "Site statique", tech: ["HTML","CSS","JavaScript"], link: "...", images: brew1 },
+  { title: "Comparaison Méteo", description: "Comparaison météo avec Python, Airflow et Metabase", tech: ["Python","Apache Airflow","Metabase","API"], link: "...", images: dash1 },
+];
 
   const sectionVariant = { hidden: { opacity:0, y:50 }, visible:{opacity:1,y:0,transition:{duration:0.6}} };
 
