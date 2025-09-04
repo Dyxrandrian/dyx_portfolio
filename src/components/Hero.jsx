@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="h-screen flex flex-col md:flex-row justify-center items-center bg-gray-100 dark:bg-gray-900 px-6 md:px-20"
+      className="h-screen flex flex-col md:flex-row justify-center items-center px-6 md:px-20 pt-20"
     >
       {/* Photo à gauche */}
       <motion.div
@@ -33,8 +33,9 @@ export default function Hero() {
           Dylan Randrianarivony
         </h1>
         <p className="text-lg md:text-2xl text-gray-700 dark:text-gray-300 mb-6">
-          Fullstack Developer | Passionné par les projets dynamiques
+          Étudiant en informatique, j'apprends le développement Fullstack et le Data Business Intelligence.
         </p>
+
 
         {/* Badges de compétences */}
         <div className="flex justify-center md:justify-start space-x-4 mb-6">
@@ -44,7 +45,6 @@ export default function Hero() {
           <FaDatabase className="text-indigo-500 w-10 h-10" />
         </div>
 
-        {/* Boutons réseaux */}
         <div className="flex justify-center md:justify-start space-x-4">
           <a
             href="https://github.com/ton-github"
@@ -53,11 +53,13 @@ export default function Hero() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/ton-linkedin"
-            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition"
+            href={new URL("../assets/CV_Dylan.pdf", import.meta.url).href} // chemin correct pour Vite
+            download
+            className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition"
           >
-            LinkedIn
+            Télécharger mon CV
           </a>
+
         </div>
       </motion.div>
     </section>

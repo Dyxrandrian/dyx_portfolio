@@ -21,7 +21,7 @@ const parcoursData = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 bg-gray-100 dark:bg-gray-900">
+    <section id="education" className="py-20">
       <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
         Parcours Académique
       </h2>

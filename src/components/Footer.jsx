@@ -3,10 +3,10 @@ import { HiOutlineMail } from "react-icons/hi";
 
 export default function Footer() {
   const socialLinks = [
-    { name: "GitHub", icon: <FaGithub />, url: "https://github.com/votre-pseudo" },
-    { name: "LinkedIn", icon: <FaLinkedin />, url: "https://linkedin.com/in/votre-profil" },
+    { name: "GitHub", icon: <FaGithub />, url: "https://github.com/Dyxrandrian" },
+    { name: "LinkedIn", icon: <FaLinkedin />, url: "https://www.linkedin.com/in/dylan-ran" },
     { name: "Twitter", icon: <FaTwitter />, url: "https://twitter.com/votre-compte" },
-    { name: "Email", icon: <HiOutlineMail />, url: "mailto:votre@email.com" }
+    { name: "Email", icon: <HiOutlineMail />, url: "mailto:tolotra.dylan@gmail.com" }
   ];
 
   return (

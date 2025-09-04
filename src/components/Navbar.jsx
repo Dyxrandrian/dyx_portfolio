@@ -4,14 +4,25 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [shadow, setShadow] = useState(false);
 
-  // Dark mode toggle
-  const handleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
+  // Smooth scroll
+  const handleSmoothScroll = (e, id) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      const offset = 80; // décalage pour navbar fixe
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = target.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+    setOpen(false); // ferme le menu mobile
   };
 
   // Shadow on scroll
@@ -21,6 +32,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const links = ["Home", "Skills", "Projects"];
+
   return (
     <motion.nav
       className={`fixed w-full z-50 bg-white dark:bg-gray-900 transition-shadow ${shadow ? "shadow-lg" : ""}`}
@@ -29,7 +42,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center h-20">
-        
+
         {/* Logo */}
         <motion.div
           className="text-2xl md:text-3xl font-bold cursor-pointer text-blue-500 dark:text-blue-400"
@@ -41,26 +54,20 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex space-x-10 items-center">
-          {["Home", "Projects", "Skills", "Contact"].map((link) => (
-            <a
+          {links.map((link) => (
+            <button
               key={link}
-              href={`#${link.toLowerCase()}`}
+              onClick={(e) => handleSmoothScroll(e, link.toLowerCase())}
               className="text-gray-800 dark:text-gray-200 font-semibold hover:text-blue-500 transition-colors"
             >
               {link}
-            </a>
+            </button>
           ))}
-          <button onClick={handleDarkMode} className="ml-4 p-2 rounded bg-gray-200 dark:bg-gray-700">
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
         </div>
 
         {/* Mobile menu button */}
-        <div className="md:hidden flex items-center">
-          <button onClick={handleDarkMode} className="mr-4 p-2 rounded bg-gray-200 dark:bg-gray-700">
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button onClick={() => setOpen(!open)}>
+        <div className="md:hidden flex items-center relative z-50">
+          <button onClick={() => setOpen(!open)} className="p-2 rounded bg-gray-200 dark:bg-gray-700">
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -72,17 +79,16 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           transition={{ duration: 0.3 }}
-          className="md:hidden bg-white dark:bg-gray-900 flex flex-col space-y-4 px-6 py-4"
+          className="md:hidden fixed top-20 left-0 w-full bg-white dark:bg-gray-900 flex flex-col space-y-4 px-6 py-4 z-40"
         >
-          {["Home", "Projects", "Skills", "Contact"].map((link) => (
-            <a
+          {links.map((link) => (
+            <button
               key={link}
-              href={`#${link.toLowerCase()}`}
+              onClick={(e) => handleSmoothScroll(e, link.toLowerCase())}
               className="text-gray-800 dark:text-gray-200 font-semibold hover:text-blue-500 transition-colors"
-              onClick={() => setOpen(false)}
             >
               {link}
-            </a>
+            </button>
           ))}
         </motion.div>
       )}
