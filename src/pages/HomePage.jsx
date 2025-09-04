@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import Skills from "../components/Skills";
-import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import Education from "../components/Education";
 import { motion } from "framer-motion";
@@ -96,22 +95,7 @@ export default function HomePage() {
             </div>
           </motion.div>
         ))}
-      </motion.section>
-
-
-
-      {/* Contact Section */}
-      <motion.section
-        id="contact"
-        className="py-20 bg-gray-200 dark:bg-gray-900 text-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariant}
-      >
-        <ContactForm />
-      </motion.section>
-
+      </motion.section> 
       <Footer />
     </div>
   );
