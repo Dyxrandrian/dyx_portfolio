@@ -7,7 +7,25 @@ import Education from "../components/Education";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
-  const skillsList = ["Java", "Spring Boot", "React", "PostgreSQL", "Git", "Docker"];
+
+  const skillsList = [
+    "React",
+    "JavaScript",
+    "Java",
+    "PostgreSQL",
+    "HTML",
+    "CSS",
+    "Data",
+    "API",
+    "React Admin",
+    "GitHub",
+    "Workflow",
+    "REST API",
+    "JSON",
+    "Weather API",
+    "Data Visualization"
+  ];
+  
   const projects = [
     {
       title: "Jirama Alert",
@@ -95,7 +113,7 @@ export default function HomePage() {
             </div>
           </motion.div>
         ))}
-      </motion.section> 
+      </motion.section>
       <Footer />
     </div>
   );
