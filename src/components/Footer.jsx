@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="max-w-sm text-gray-400 text-sm leading-relaxed">
           <p>
             Actuellement basé à <span className="text-white">Antananarivo, Madagascar</span>.
-            Etudiant en développeur web fullstack, spécialisé en <span className="text-white">React, Node.js</span> et
+            Etudiant en développeur web fullstack, spécialisé en <span className="text-white">Wordpress, React, Node.js</span> et
             la création d’applications performantes.
             Vous pouvez me contacter à :
             <a
