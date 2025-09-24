@@ -7,8 +7,11 @@ import { MdApi } from "react-icons/md";
 import { AiOutlineBarChart } from "react-icons/ai";
 import { RiFlowChart } from "react-icons/ri";
 import PythonIcon from "../assets/python.png";
+import { FaWordpress } from "react-icons/fa";
+
 
 const skillIcons = {
+  WordPress: <FaWordpress className="text-blue-700 w-8 h-8" />, // <-- ajouté ici
   React: <FaReact className="text-blue-500 w-8 h-8" />,
   "React Admin": <FaCog className="text-pink-500 w-8 h-8" />,
   HTML: <FaHtml5 className="text-orange-500 w-8 h-8" />,
@@ -22,6 +25,7 @@ const skillIcons = {
   "Apache Airflow": <RiFlowChart className="text-teal-500 w-8 h-8" />,
   "Data Visualization": <AiOutlineBarChart className="text-yellow-500 w-8 h-8" />,
 };
+
 const skills = Object.keys(skillIcons);
 
 export default function Skills() {
